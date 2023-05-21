@@ -1,0 +1,20 @@
+version: '3.5'
+services:
+  dev-postgres:
+    image: postgres:13
+    container_name: relocan-dev-postgres
+    shm_size: 1g
+    ports:
+      - ${PORT}:5432
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    command: postgres -c config_file=/etc/postgresql/postgresql.conf
+    volumes:
+      - ${CONFIG}:/etc/postgresql/postgresql.conf
+      - ${CONFIG_SQL_DDL}:/docker-entrypoint-initdb.d/create.sql
+    networks:
+      - relocan-dev-net
+networks:
+  relocan-dev-net:
+    external: true

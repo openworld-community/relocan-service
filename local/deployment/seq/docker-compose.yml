@@ -1,0 +1,18 @@
+version: '2'
+services:
+  dev-seq:
+    image: datalust/seq:2022.1
+    container_name: dev-seq
+    hostname: localhost
+    shm_size: 256m
+    ports:
+       - "${HOST_HTTP_PORT}:80"
+       - "${HOST_INGESTION_PORT}:5341"
+       - "${HOST_GELF_PORT}:12201/udp"
+    environment:
+       ACCEPT_EULA: "Y"
+    networks:
+      - relocan-dev-net
+networks:
+  relocan-dev-net:
+    external: true
