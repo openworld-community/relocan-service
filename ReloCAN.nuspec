@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Relocan.Service.Contract</id>
+    <title>ReloCAN Service</title>
+    <version>7.0.2</version>
+    <authors>Peredelano crew</authors>
+    <description>
+      Relocation all-in-one guides and services from peredelano crew
+    </description>
+    <language>ru-RU</language>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/openworld-community/relocan-service</projectUrl>
+    <releaseNotes>Relocation guides and services from peredelano crew</releaseNotes>
+    <readme>README.md</readme>
+  </metadata>
+  <files>
+    <file src=".\**" target="content" exclude="**\bin\**;**\obj\**;**\.git\**;**\.github\**;**\*.user;**\.vs\**;**\.vscode\**;**\.gitignore" />
+    <file src="README.md" />
+  </files>
+</package>
